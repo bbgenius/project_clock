@@ -1,0 +1,111 @@
+// Setup Color:
+$blueViolet:#8A2BE2;
+$plumColor:#DDA0DD;
+$lightPinkcolor: #FFB6C1;
+$hotPinkcolor:#FF69B4;
+$lightBluecolor: #6A5ACD;
+$lightGray: #D3D3D3;
+$grayColor: #DCDCDC;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, 
+    #8EC5FC 0%, 
+    #E0C3FC 100%);
+}
+.clock_wrapper{
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    background-color: $grayColor;
+    box-shadow: 5px 5px 4px 4px $lightGray, -5px -5px 4px 4px $lightPinkcolor, 0 0 50px 10px $grayColor;
+    position: relative;
+    .numbers, .arrows{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        div{
+            font-size: 3rem;
+            position: absolute;
+            font-weight: 600;
+            color: goldenrod;
+            text-shadow: 2px 2px 1px $grayColor;
+        }
+        .twelve{
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .three{
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .six{
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .nine{
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &::after{
+            content: "";
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #8EC5FC;
+        }
+    }
+    .arrows{
+        div{
+            position: absolute;
+            width: 0.5rem;
+            height: 13rem;
+            background-color: #8EC5FC;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0rem 0rem 10rem 10rem;
+            transform-origin: top center;
+        }
+        .second{
+            transform: rotate(90deg);
+        }
+        .minute{
+            height: 10rem;
+            transform: rotate(45deg);
+            background-color: #DDA0DD;
+        }
+        .hour{
+            height: 7rem;
+            transform: rotate(-45deg);
+            background-color: brown;
+        }
+    }
+}
